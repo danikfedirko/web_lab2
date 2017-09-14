@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Курс</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+    <body>
+        <header>
+           <nav>
+            <ul class="menu">
+                <li class="menu-item">
+                    <img class="logo" src="img/img.png" alt="">
+                </li>
+                        <li class="menu-item">
+                    <a href="index.html">Головна</a>
+                </li>
+                <li class="menu-item">
+                    <a href="news.html">Новини</a>
+                </li>
+                <li class="menu-item drop-down">
+                    <a href="">Студентам</a>
+                    <ul>
+                        <li><a href="programm.html">Програма</a></li>
+                        <li><a href="labs.html">Лабораторні</a></li>
+                        <li><a href="lit.html">Література</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="feedback.html">Відгуки</a>
+                </li>
+                <li class="menu-item">
+                    <a href="contact.html">Контакти</a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin.html">Адмін</a>
+                </li>
+            </ul>
+            </nav>
+        </header>
+    <div class="container">
+        <img src="img/img-big.jpg" alt="" class="responsive">
+        <div class="contacts">
+         <h1 class="title">Контакти</h1>
+        <p>
+            Адреса: Чупринки 117<br>
+            Тел: 232 233 233
+        </p>
+        </div>
+        </div>
+          <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgJh1MbsMAMY4ESWO2aLw8xVtLzDYGZM&callback=initMap">
+    </script>
+        <footer>
+            (c)Copyright
+        </footer>
+    </body>
+</html>
