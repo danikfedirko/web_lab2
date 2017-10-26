@@ -1,137 +1,202 @@
-body{
+body {
     font-family: 'Roboto';
-    color: #333
+    color: #333;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
-img.responsive{
+
+img.responsive {
     width: 100%;
     height: auto;
     display: block
 }
-.menu{
-    width: 100%;
+
+.menu {
     display: flex;
-    justify-content: space-around;
-    list-style:none;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
 }
-.menu-item{
-  line-height: 50px  
+
+.menu-item {
+    line-height: 50px;
+    transition: all .3s
 }
-a{
+
+.menu-item:hover a {
+    color: #ccc
+}
+
+a {
     text-decoration: none;
     color: #333;
 }
-button{
+
+button {
     background: none;
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 10px;
     margin: 1em auto;
 }
-.logo{
+
+.logo {
     height: 50px;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: 4;
+    animation-timing-function: ease-in-out;
 }
-.drop-down{
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.drop-down {
     position: relative
 }
-.drop-down ul{
+
+.drop-down ul {
     position: absolute;
     bottom 0;
-    display: none;
+    visibility: hidden;
     list-style: none;
     background: #f2f2f2;
     padding-left: 0;
+    opacity: 0;
+    transition: all .3s
 }
-.drop-down ul li{
+
+.drop-down ul li {
     padding: 0 20px;
-     transition: all .2s;
+    transition: all .2s;
 }
-.drop-down:hover ul{
-    display: block
+
+.drop-down:hover ul {
+    visibility: visible;
+    opacity: 1;
 }
-.drop-down ul li:hover{
+
+.drop-down ul li:hover {
     background-color: #e0e0e0
 }
-.container{
+
+.container {
     max-width: 1200px;
     margin: auto;
     padding: 0 2em;
 }
-.title{
+
+.title {
     text-align: center;
     margin: 2em 0;
 }
-.news{
+
+.news {
     display: flex;
+    margin-bottom: 4em
 }
-.article{
-    width: 33%;
-    border: solid 1px #ccc;
-    margin: 1em
+
+
+.article {
+    box-shadow: 0px 0px 10px 0px #d6d6d6;
+    transition: all .3s
 }
-.article h3, .article p{
-      padding: 0 20px;
+
+.article:hover {
+    box-shadow: none;
+    cursor: pointer
 }
-.article img{
+
+.article h3,
+.article p {
+    padding: 0 20px;
+}
+
+.article img {
     width: 100%;
     height: auto
 }
-footer{
+
+footer {
     padding: 1em 0;
     text-align: center;
     background-color: #c7c7c7;
 }
-table{
+
+table {
     width: 100%;
     text-align: left;
-     border-collapse: collapse;
+    border-collapse: collapse;
     margin-bottom: 2em;
 }
-th,td{
+
+th,
+td {
     border: 1px solid #ccc;
     margin: 0;
     padding: 10px
 }
 
-.contacts{
+.contacts {
     text-align: center
 }
-.feedback{
+
+.feedback {
     padding: 2em 0;
 }
-.feedback:nth-child(3){
+
+.feedback:nth-child(3) {
     border-top: 2px solid #ccc;
 }
-.feedback h2, .feedback span{
+
+.feedback h2,
+.feedback span {
     display: inline-block;
 }
-.feedback span{
+
+.feedback span {
     color: #ccc;
     font-style: italic;
     margin-left: 1em;
 }
 
-textarea{
+textarea {
     margin-top: 2em;
     width: 100%;
     margin-bottom: 1em
 }
-.button{
+
+.button {
     text-align: right;
     margin-bottom: 2em;
 }
 
-.adminpanel{
+.adminpanel {
     display: flex
 }
-.adminpanel > div{
+
+.adminpanel>div {
     width: 50%;
 }
-.adminpanel input{
+
+.adminpanel input {
     display: block;
     margin-top: 1em;
     padding: 10px;
 }
-.text{
-    height: 300px;
-    width: 70%;
+.btn-light{
+  margin-bottom: 1em
+}
+.text {
+margin: 1em 0
 }
