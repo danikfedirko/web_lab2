@@ -6,10 +6,11 @@ CACHE:
 
 #images
 http://localhost:3001/lab2/img/img.png
+http://localhost:3001/lab2/img/img-big.jpg
 
 #internal HTML documents
-http://localhost:3001/lab2/
-http://localhost:3001/lab2/index.html
+/lab2/index.html
+/lab2/contact.html
 
 #style sheets
 http://localhost:3001/lab2/css/main.css

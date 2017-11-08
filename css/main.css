@@ -198,5 +198,9 @@ textarea {
   margin-bottom: 1em
 }
 .text {
-margin: 1em 0
+  margin: 1em 0
+}
+
+.alert{
+  border-color: red
 }

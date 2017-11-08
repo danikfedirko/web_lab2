@@ -43,6 +43,7 @@
     </header>
     <div class="container">
         <h1 class="title">Відгуки</h1>
+        <div id="feedbacksWrap">
         <div class="feedback">
             <h2>Вася Пупкін</h2>
             <span>11.12.12</span>
@@ -53,14 +54,16 @@
             <span>11.12.12</span>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum earum, repudiandae quo animi optio molestiae quibusdam minus ullam, unde praesentium deleniti? Non repudiandae magnam omnis accusamus aut sit tempora expedita.</p>
         </div>
-        <textarea rows="10" placeholder="Новий відгук"></textarea>
+      </div>
+        <textarea label="feedback" id="feedback" rows="10" placeholder="Новий відгук"></textarea>
         <div class="btn btn-light">
-            <button type="submit">Відправити</button>
+            <button for="feedback" id="feedbackButton" type="submit">Відправити</button>
         </div>
     </div>
     <footer>
         (c)Copyright
     </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
