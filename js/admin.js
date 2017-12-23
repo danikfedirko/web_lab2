@@ -4,7 +4,7 @@ var newsButton = document.getElementById('sendArticle')
 var articleField = document.getElementById('article')
 var title = document.getElementById('title')
 var image = document.getElementById('inputfile')
-var useLocalStorage = false
+var useLocalStorage = true
 
 window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
@@ -53,14 +53,22 @@ newsButton.addEventListener('click', function() {
         ? sendToServer(news)
         : addToStorage(news);
       alert('Article sent!');
-      articleField.value = ''
-      title.value = ''
+
     }
 
     function sendToServer(newsItem) {
-      news = []
-      news.push(newsItem);
-        localStorage.setItem('news', JSON.stringify(news));
+      var data = {
+            title: title.value,
+            article: articleField.value
+        }
+        $.ajax({
+            url: 'http://localhost:8080/api/bears',
+            type: "post",
+            dataType: "json",
+            data: data
+        });
+        articleField.value = ''
+        title.value = ''
     }
 
     function addToStorage(newsItem) {
