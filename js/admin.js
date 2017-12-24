@@ -59,16 +59,17 @@ newsButton.addEventListener('click', function() {
     function sendToServer(newsItem) {
       var data = {
             title: title.value,
-            article: articleField.value
+            shortdescription: title.value,
+            longdescription: articleField.value
         }
+        console.log(data);
         $.ajax({
             url: 'http://localhost:8080/api/bears',
             type: "post",
             dataType: "json",
             data: data
         });
-        articleField.value = ''
-        title.value = ''
+
     }
 
     function addToStorage(newsItem) {

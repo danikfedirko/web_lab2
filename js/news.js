@@ -1,4 +1,4 @@
-var condition = "offline";
+var condition = "online";
 var useLocalStorage = false
 
 window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -19,10 +19,14 @@ window.addEventListener('offline', function(e) {
   var condition = 'offline'
   takeFromStorage()
 });
+if (condition=='online') {
+  takeFromServer()
+}
 
 function createNews(news) {
+  console.log(news);
   var element = document.getElementById("news");
-  element.innerHTML += '<div class="col-lg-4"><div class="article"> <center><img src = "' + news.image + '" alt = "News" width="300" height = "300"></center><center><h3>' + news.title + '</h3></center><p>' + news.text + '</p></div></div>'
+  element.innerHTML += '<div class="col-lg-4"><div class="article"> <center><img src = "img/img.png" alt = "News" width="300" height = "300"></center><center><h3>' + news.shortdescription + '</h3></center><p>' + news.longdescription + '</p></div></div>'
 }
 
 function getNews() {
@@ -61,6 +65,20 @@ function getNewsFromDB() {
 }
 
   function takeFromServer() {
+    $.ajax({
+        url: 'http://localhost:8080/api/bears',
+        type: "get",
+        dataType: "json",
+
+        success: function(data) {
+            for (var i = 0; i < data.length; i++) {
+              createNews(data[i]);
+            }
+        }
+    });
+  }
+
+  function takeFromStorage() {
     if (useLocalStorage) {
       var news = getNews();
       if ((typeof news !== 'undefined') && (news.length > 0)) {
@@ -85,4 +103,3 @@ function getNewsFromDB() {
     }
     }
   }
-  function takeFromStorage() {}

@@ -13,7 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080; // set our port
+app.listen(8080, function () {
 
+});
 // DATABASE SETUP
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://root:1234@ds129936.mlab.com:29936/laba'); // connect to our database
@@ -27,7 +29,7 @@ db.once('open', function() {
 });
 
 // Bear models lives here
-var Bear = require('./app/models/bear');
+var Bear = require('./models/bear');
 
 // ROUTES FOR OUR API
 // =============================================================================
