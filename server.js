@@ -18,7 +18,7 @@ app.listen(8080, function () {
 });
 // DATABASE SETUP
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://root:1234@ds129936.mlab.com:29936/laba'); // connect to our database
+mongoose.connect('mongodb://admin:12345@ds161455.mlab.com:61455/mongod'); // connect to our database
 
 // Handle the connection event
 var db = mongoose.connection;

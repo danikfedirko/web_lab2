@@ -4,7 +4,7 @@ var newsButton = document.getElementById('sendArticle')
 var articleField = document.getElementById('article')
 var title = document.getElementById('title')
 var image = document.getElementById('inputfile')
-var useLocalStorage = true
+var useLocalStorage = false
 
 window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
@@ -62,7 +62,8 @@ newsButton.addEventListener('click', function() {
             shortdescription: title.value,
             longdescription: articleField.value
         }
-        console.log(data);
+        articleField.value = ''
+        title.value = ''
         $.ajax({
             url: 'http://localhost:8080/api/bears',
             type: "post",
